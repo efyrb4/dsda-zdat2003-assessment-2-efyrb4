@@ -1,5 +1,38 @@
 # Report
 
+# California Housing dataset 
+
+### Summary of California Housing Dataset:
+
+The California Housing dataset contains features describing various geographical locations in California and targets the median house value for districts. Each data instance represents a district, and the dataset includes the following features:
+
+### Application of Supervised Machine Learning:
+
+1. **Regression Analysis:**
+   - The dataset can be used for regression analysis to predict the median house value based on the geographical and demographic features.
+   - Various regression algorithms such as linear regression, decision trees, random forests, gradient boosting, or neural networks can be applied.
+   - Performance metrics such as mean squared error (MSE), mean absolute error (MAE), root mean squared error (RMSE), and R-squared can be used to evaluate model performance.
+
+### Application of Unsupervised Machine Learning:
+
+1. **Clustering Analysis:**
+   - Apply clustering algorithms such as K-means or DBSCAN to group similar geographical regions together based on demographic features.
+   - Identify clusters of regions with similar housing characteristics, which can provide insights into spatial patterns and regional disparities.
+   - Visualization techniques such as heatmaps or choropleth maps can be used to visualize cluster densities and spatial patterns of housing characteristics.
+
+2. **Dimensionality Reduction:**
+   - Use techniques like Principal Component Analysis (PCA) to reduce the dimensionality of the dataset and visualize high-dimensional data in lower dimensions.
+   - Explore underlying patterns or relationships between features and identify the most informative features that distinguish between districts.
+
+3. **Anomaly Detection:**
+   - Identify outliers or unusual patterns in the data, such as districts with significantly different housing characteristics compared to neighboring regions.
+   - Anomaly detection techniques can help identify regions with unexpected housing trends or anomalies in the data, which may require further investigation.
+
+### Summary:
+The California Housing dataset offers opportunities for both supervised and unsupervised machine learning techniques. Supervised learning can be applied to predict house prices based on demographic and geographical features, while unsupervised learning can provide insights into spatial patterns, regional disparities, and anomalies within California districts. These techniques can inform urban planning, real estate development, and policy-making decisions by understanding housing market dynamics and socio-economic patterns across different regions of California.
+
+
+
 **Note: The report should be somewhat self-contained and not require running code later to generate graphs. Whilst it should be possible to run the code and generate the graphs, the report should be able to stand alone and reflect the final version that you are happy to be marked.**
 
 ## Contents
