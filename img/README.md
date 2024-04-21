@@ -1,7 +1,7 @@
 # Images
 
 ## Overview
-This directory contains images from the [ML experiments Notebook](dsda-zdat2003-assessment-2-efyrb4/tree/src/ML_experiments.ipynb) and will be included within the [REPORT.md](REPORT.md). All images are referenced in Markdown files using relative paths for easier management.
+This directory contains images from the [ML experiments Notebook](src/ML_experiments.ipynb) and will be included within the [REPORT.md](REPORT.md). All images are referenced in Markdown files using relative paths for easier management.
 
 ### Subfolders:
 
