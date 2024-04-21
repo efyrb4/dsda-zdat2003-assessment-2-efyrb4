@@ -3,25 +3,23 @@
 ## Contents
 
 - [Supervised ML](#supervised-ml)
-  - [Random Forest Regressor](#random-forest-regressor)
-  - [Supervised ML Dataset](#supervised-ml-dataset)
-  - [Supervised ML Experiments](#supervised-ml-experiments)
-    - [Supervised ML Experiment 1](#supervised-ml-experiment-1)
-    - [Supervised ML Experiment 1 Description](#supervised-ml-experiment-1-description)
-    - [Supervised ML Experiment 1 Results](#supervised-ml-experiment-1-results)
-    - [Supervised ML Experiment 1 Discussion](#supervised-ml-experiment-1-discussion)
+  - [Random Forest Regression](#random-forest-regression)
+  - [California Housing Dataset](#california-housing-dataset)
+  - [Random Forest Regression Experiments](#random-forest-regression-experiments)
+    - [Random Forest Regression Experiment 1](#random-forest-regression-experiment-1)
+    - [Random Forest Regression Experiment 1 Description](#random-forest-regression-experiment-1-description)
+    - [Random Forest Regression Experiment 1 Results](#random-forest-regression-experiment-1-results)
+    - [Random Forest Regression Experiment 1 Discussion](#random-forest-regression-experiment-1-discussion)
 - [Unsupervised ML](#unsupervised-ml)
 
 
 ## Supervised ML
 
-### Random Forest Regressor
-
-[Random Forest Regressor (Sklearn)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+### Random Forest Regression
 
 [Random Forest Regression (Overview)](https://builtin.com/data-science/random-forest-algorithm)
 
-In this AI and ML project, the **Random Forest Regressor** was utilised to predict California housing prices. The Random Forest algorithm is an ensemble method that combines numerous decision trees and aggregates all predictions from the trees to achieve more accurate results (**bagging**). Through combining multiple trees and **bootstrapping**, the model develops an ability to generalise well to new samples whilst mitigating the risk of overfitting to the training data. 
+In this AI and ML project, the [Random Forest Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) was utilised to predict California housing prices. The Random Forest algorithm is an ensemble method that combines numerous decision trees and aggregates all predictions from the trees to achieve more accurate results (**bagging**). Through combining multiple trees and **bootstrapping**, the model develops an ability to generalise well to new samples whilst mitigating the risk of overfitting to the training data. 
 
 The decision to employ the Random Forest algorithm to predict California housing prices, was due to the model’s capability to handle complex and non-linear relationships between features and the target variable. Features such as location, population, and house age may not exhibit linear relationships with housing prices, making models such as linear regression unsuitable for accurate predictions.
 
@@ -29,38 +27,78 @@ Furthermore, the ensemble of trees enables the handling of extreme outliers or a
 
 
 
-### Supervised ML Dataset
-
-A very brief description of the dataset used for this technique. The datasets should not require any signifiant pre-processing to use with the model, so you can link to the documentation for the dataset here and provide only changes you have made or your usage.
-
-[California Housing dataset (Sklearn)](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset)
-
-### Summary of California Housing Dataset:
-
-The California Housing dataset contains features describing various geographical locations in California and targets the median house value for districts. Each data instance represents a district, and the dataset includes the following features:
+### California Housing Dataset
 
 
+The  [California Housing dataset](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset) consists of 8 features (visible in the [ML Experiments Notebook](../src/ML_experiments.ipynb)) describing different geographical locations within California and their respective median house values for districts. Each instance in the dataset represents the median house value for a block group, totalling 20,640 instances.
 
-### Summary:
-The California Housing dataset offers opportunities for both supervised and unsupervised machine learning techniques. Supervised learning can be applied to predict house prices based on demographic and geographical features, while unsupervised learning can provide insights into spatial patterns, regional disparities, and anomalies within California districts. These techniques can inform urban planning, real estate development, and policy-making decisions by understanding housing market dynamics and socio-economic patterns across different regions of California.
+Before implementing Random Forest Regression on the dataset, I conducted initial pre-processing steps to address outliers within the features. I utilised the Interquartile Range (**IQR**) method to manage outliers (**Q1/Q3 +- 1.5 * IQR**). This approach was applied to all features, excluding the median house value and longitude/latitude, as one is the target variable, and the latter are geographical coordinates. Following pre-processing, the dataset retained 16,840 instances.
 
-### Supervised ML Experiments
 
-**Repeat the following sections for each experiment you run.**
+### Random Forest Regression Experiments
 
-#### Supervised ML Experiment 1
+**Parameters used:**
 
-##### Supervised ML Experiment 1 Description
+- **`n_estimators`**: This parameter determines the number of decision trees to be used in the forest.
+
+
+- **`max_depth`**: This parameters controls the maximum depth of each decision tree in the Random Forest.
+
+
+- **`max_features`**: This parameter specifies the maximum number of features Random Forest is allowed to consider when looking for the best split at each node.
+
+These parameters were selected to strike a balance between model performance, computational efficiency, and the complexity of the trees in the Random Forest Regressor.
+
+#### Random Forest Regression Experiment 1
+
+##### Random Forest Regression Experiment 1 Description
 
 A description of how you experimented with the model (e.g. parameter tuning) and the goal of the experiment. You can refer to other files in your project, but you should include here things like a table containing the configuration you employed, what you changed, and why you changed it. What exactly you include here will depend on the technique you've selected and the experiments you choose to run.
 
-#### Supervised ML Experiment 1 Results
+| Model   | n_estimators | max_depth | max_features |
+|---------|--------------|-----------|--------------|
+| RFR(1)  | 50           | 3         | 2            |
+
+This initial experiment with the Random Forest Regressor focused on predicting Californian house prices based on several features. The chosen parameters, `n_estimators = 50`, `max_depth = 3`, and `max_features = 2`, were selected to carefully balance model performance, computational efficiency, and the complexity of the trees within the Random Forest.
+The goal of this experiment was to evaluate the Random Forest model's performance with a reduced number of trees, limited tree depth, and a small number of selected features. This served as a starting point for assessing the model's behavior and laying the groundwork for subsequent experiments where parameters and features could be further adjusted and expanded.
+
+- **`n_estimators = 50`**: Starting below the default 100, this parameter represents the number of trees in the Random Forest. By using 50 trees, the experiment aimed to assess model performance with reduced computational intensity, as fewer trees require less computation.
+
+- **`max_depth = 3`**: This parameter determines the maximum depth of each decision tree. A depth of 3 was chosen for efficiency and to provide a clear view of a typical tree's decision process. A lower depth is less computationally intensive and allows for better understanding of the tree's structure.
+
+- **`max_features = 2`**: Initially limited to 2, `max_features` specifies the maximum number of features considered at each node. This choice allowed for observing model performance with simplicity before potentially increasing complexity with more features.
+
+
+#### Random Forest Regression Experiment 1 Results
 
 The results of the experiment. This should include any graphs or tables that you have generated as well as any relevant metrics or statistics that you have calculated. You can include here qualitative observations, comparisons with a baseline/other parameters (if relevant), etc. Consider your presentation of results carefully to show concise but clear information without just bombarding the reader with plots and text!
 
-#### Supervised ML Experiment 1 Discussion
+| Model   | R^2 Score | RMSE     |
+|---------|-----------|----------|
+| RFR(1)  | 0.448     | 0.780|   |
+
+
+![Actual-vs-predicted](img\Model_1-(Actual vs Predicted).png)
+
+
+
+![Smiley Face](img/smiley.png)
+#### Random Forest Regression Experiment 1 Discussion
 
 Here, you should include an analysis and evaluation of the results of your experiments. This can include broader considerations than the results, such as: a discussion on the significance and implications of the results with respect to the data and, critically, the model itself; an assessment of the model's performance linked to the experiments; and any observed trends or anomalies; reflection on the experiment's limitations and potential biases; any limitations of the experiment and any potential improvements that could be made; etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Unsupervised ML
 
