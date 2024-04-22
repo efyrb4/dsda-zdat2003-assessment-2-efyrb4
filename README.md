@@ -5,12 +5,7 @@
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Markdown Formatting](#markdown-formatting)
-  - [Code](#code)
-  - [Maths](#maths)
-  - [Tables](#tables)
-  - [Diagrams](#diagrams)
-  - [Images](#images)
-- [Questions](#questions)
+
 
 ## Overview
 
@@ -40,56 +35,3 @@ dsda-zdat2003-assessment-2/
 ## Markdown Formatting
 
 You should make use of Markdown formatting in the documentation and report. This will make it easier to read and understand. You can use the [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/) to help you with this. Note how you can easily include things like links, tables, images, and code blocks. Some useful examples are included below but you can use any Markdown formatting you like. Note that there are variations in how Markdown is rendered in different places (e.g. GitHub, VS Code, etc.) so you may need to check how it looks in different places to ensure it is readable.
-
-### Code
-
-You can include code inline by wrapping it in backticks. For example, `print("Hello, world!")`. Larger code blocks are a way to present snippets code. For example:
-
-```python
-def countdown(n):
-    for i in range(n, 0, -1):
-        print(i)
-    print("Blast off!")
-```
-
-### Maths
-
-You can [include maths in Markdown using LaTeX](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions) and write an inline equation using single dollar signs (`$`) and a block equation using double dollar signs (`$$`). For example, the quadratic formula can be written inline ($x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$) or on a new line:
-
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-
-### Tables
-
-Embedded tables can be used to present data in a more legible format than an image of a table. For example:
-
-| Count | Output     |
-|-------|------------|
-| 3     | 3          |
-| 2     | 2          |
-| 1     | 1          |
-| 0     | Blast off! |
-
-### Diagrams
-
-Mermaid diagrams can be used in the documentation and report. For example, the following code will generate a flowchart when you preview it. (For VS Code you may need to [add an extension for Mermaid diagrams in Markdown](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid).) You can also use the [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor/) to generate diagrams and then copy the code into your documentation. If you prefer, you could also use a different tool to generate diagrams and include them as images.
-
-```mermaid
-%%{init: {'flowchart' : {'curve' : 'linear'}}}%%
-flowchart TB
-    A([Start]) --> B[Counter set to 3]
-    B --> C{"Counter greater\nthan 0"}
-    C --> |No| F([Blast off!])
-    C --> |Yes| D[/Output counter/]
-    D --> E[Decrement counter by 1]
-    E --> C
-```
-
-### Images
-
-Images should be extensively used for any plots or diagrams that you want to include in the report or documentation. It's generally good practice to save these images to a single location (e.g. the `img/` directory) and reference them in the report and documentation. You can include images in the report and documentation using Markdown or HTML. **Don't use a GitHub or web URL for images, as this will not work when you submit the project as a zip file! Ensure that you link to them using *relative* paths.**
-
-![Smiley Face](img/smiley.png)
-
-## Questions
-
-If you have any questions about the project or this template, please reach out to Adam Walker via [email](mailto:adam.walker1@nottingham.ac.uk) or [MS Teams](https://teams.microsoft.com/l/chat/0/0?users=Adam.Walker1@nottingham.ac.uk).
