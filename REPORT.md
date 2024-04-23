@@ -335,7 +335,7 @@ By assessing **Figure 15** and evaluating the inertia and silhouette scores, the
 
 
 #### K-means Experiment 2 Description
-Based on the previous experiment, increasing the number of clusters appears appropriate due to the diificulty of classifying less expensive houses in California.
+Based on the previous experiment, increasing the number of clusters appears appropriate due to the difficulty of classifying less expensive houses in California.
 
 - **`n_clusters = 4`**: As 3 clusters provided close distinct groupings, a slight increment seems suitable to further separate the more varied clusters.
 
@@ -357,7 +357,7 @@ Based on the previous experiment, increasing the number of clusters appears appr
 
 #### K-means Experiment 2 Discussion
 
-- The increase in clusters has led to a reduction in the variance within clusters with cluster 1 now being the most cohesive (**FIgure 19**). Although the clusters possess strong silhouette scores, there is still some variance between instances in cluster 0 which reflects the difficulty of clustering the lower prices houses in California.
+- The increase in clusters has led to a reduction in the variance within clusters with cluster 1 now being the most cohesive (**Figure 19**). Although the clusters possess strong silhouette scores, there is still some variance between instances in cluster 0 which reflects the difficulty of clustering the lower prices houses in California.
 
 - **Figure 20** shows similarities with the initial clusters in **Figure 21**. The model performs well in identifying the more expensive housing along the California coast and exhibits improvement in recognising lower housing prices, particularly along the southern coast. However, the model doesn't entirely capture the complexities of determining housing prices for the districts.
 
