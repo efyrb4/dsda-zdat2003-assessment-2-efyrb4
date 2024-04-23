@@ -19,14 +19,12 @@ The project is structured as follows:
 
 ```plaintext
 dsda-zdat2003-assessment-2/
-├── doc/
 ├── img/
 ├── src/
 ├── README.md
 └── REPORT.md
 ```
 
-- `doc/`: Contains any project documentation that doesn't fit elsewhere in the project.
 - `img/`: Contains images used in the report and documentation. This should include any generated and saved plots during the course of your project (e.g. generated from Matplotlib or Seaborn in Jupyter notebooks). Please **do not** rely on images only being generated at runtime. Save them to this directory and reference them in the report and documentation. The code to generate each plot **must** still exist, however.
 - `src/`: Contains the source code for the project. This will include Jupyter notebooks, Python files, and any other code used in the project. Your experiments must be reproducible, so ensure that all code is present and that the code can be run to generate the same results in the report.
 - `README.md`: This file. It should contain an overview of the project and how to run the code as well as a brief description of the project structure and the contents of the other files.

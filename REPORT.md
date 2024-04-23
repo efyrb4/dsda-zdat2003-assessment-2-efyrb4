@@ -333,22 +333,17 @@ Utilising the grid search to identify optimal parameters, the model achieved an 
 
 - **Figures 14 and 15** illustrate the performance improvements with increasing parameters, supported by a model comparison in **Figure 16** showcasing changes across all models.
 
-- **Figure 17** presents a learning curve analszing training data's impact on the validation set, assessing potential overfitting. Initially, the model shows signs of overfitting, but as training samples increase, validation performance improves.
+- **Figure 17** presents a learning curve analysing training data's impact on the validation set, assessing potential overfitting. Initially, the model shows signs of overfitting, but as training samples increase, validation performance improves.
 ---
 ## Unsupervised ML
 
+### K-means Clustering
 
-### Application of Unsupervised Machine Learning:
+[K-means clustering Sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 
 1. **Clustering Analysis:**
    - Apply clustering algorithms such as K-means or DBSCAN to group similar geographical regions together based on demographic features.
    - Identify clusters of regions with similar housing characteristics, which can provide insights into spatial patterns and regional disparities.
    - Visualization techniques such as heatmaps or choropleth maps can be used to visualize cluster densities and spatial patterns of housing characteristics.
 
-2. **Dimensionality Reduction:**
-   - Use techniques like Principal Component Analysis (PCA) to reduce the dimensionality of the dataset and visualize high-dimensional data in lower dimensions.
-   - Explore underlying patterns or relationships between features and identify the most informative features that distinguish between districts.
 
-3. **Anomaly Detection:**
-   - Identify outliers or unusual patterns in the data, such as districts with significantly different housing characteristics compared to neighboring regions.
-   - Anomaly detection techniques can help identify regions with unexpected housing trends or anomalies in the data, which may require further investigation.
