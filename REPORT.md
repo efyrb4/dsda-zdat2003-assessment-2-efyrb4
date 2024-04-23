@@ -2,7 +2,9 @@
 
 ## Contents
 - [California Housing Dataset](#california-housing-dataset)
+
 - [Supervised ML](#supervised-ml)
+
   - [Random Forest Regression](#random-forest-regression)
   - [Random Forest Regression Experiments](#random-forest-regression-experiments)
 
@@ -28,8 +30,21 @@
 
     - [Model comparison & evaluation](#model-comparison--evaluation)
 
-
 - [Unsupervised ML](#unsupervised-ml)
+
+  - [K-means Clustering](#k-means-clustering)
+
+  - [K-means Experiments](#k-means-experiments)
+
+      - [K-means Experiment 1](#k-means-experiment-1)
+         - [K-means Experiment 1 Description](#k-means-experiment-1-description)
+         - [K-means Experiment 1 Results](#k-means-experiment-1-results)
+         - [K-means Experiment 1 Discussion](#k-means-experiment-1-discussion)
+
+      - [K-means Experiment 2](#k-means-experiment-2)
+         - [K-means Experiment 2 Description](#k-means-experiment-2-description)
+         - [K-means Experiment 2 Results](#k-means-experiment-2-results)
+         - [K-means Experiment 2 Discussion](#k-means-experiment-2-discussion)
 
 ## California Housing Dataset
 
@@ -341,9 +356,59 @@ Utilising the grid search to identify optimal parameters, the model achieved an 
 
 [K-means clustering Sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
 
-1. **Clustering Analysis:**
-   - Apply clustering algorithms such as K-means or DBSCAN to group similar geographical regions together based on demographic features.
-   - Identify clusters of regions with similar housing characteristics, which can provide insights into spatial patterns and regional disparities.
-   - Visualization techniques such as heatmaps or choropleth maps can be used to visualize cluster densities and spatial patterns of housing characteristics.
+### K-means Experiments
+
+**Parameters used:**
+
+- **`n_clusters`**: This parameter determines the number of clusters to perform clustering with.
+
+---
+### K-means Experiment 1
+
+#### K-means Experiment 1 Description
+#### K-means Experiment 1 Results
+
+![Optimal clusters](img\clustering\Optimal_clusters.png)
+*Figure 18: Inertia and silhoutte plot to find optimal clusters*
+<br><br>
+
+![Avg silhoutte plot](img\clustering\3_clusters_silhoutte.png)
+*Figure 19: Average silhoutte per cluster*
+<br><br>
+
+![Geographical clusters](img\clustering\3_cluster_map.png)
+*Figure 20: Geographical clusters based on Median house value*
+<br><br>
+
+![Actual clusters](img\clustering\Actual_Clusters.png)
+
+*Figure 21: Actual geographical Median house value*
+<br><br>
+
+
+#### K-means Experiment 1 Discussion
+
+
+#### K-means Experiment 2 Description
+
+
+#### K-means Experiment 2 Results
+
+![Avg silhoutte plot](img\clustering\4_cluster_silhoutte.png)
+*Figure 22: Average silhoutte per cluster*
+<br><br>
+
+![Geographical clusters](img\clustering\4_cluster_map.png)
+*Figure 23: Geographical clusters based on Median house value*
+<br><br>
+
+![Actual clusters](img\clustering\Actual_Clusters.png)
+
+*Figure 24: Actual geographical Median house value*
+<br><br>
+
+#### K-means Experiment 2 Discussion
+
+
 
 
