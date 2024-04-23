@@ -366,11 +366,15 @@ Utilising the grid search to identify optimal parameters, the model achieved an 
 ### K-means Experiment 1
 
 #### K-means Experiment 1 Description
-#### K-means Experiment 1 Results
 
 ![Optimal clusters](img\clustering\Optimal_clusters.png)
 *Figure 18: Inertia and silhoutte plot to find optimal clusters*
 <br><br>
+
+The aim of this experiment is to utilise the most optimal clusters that are identified through **Figure 18** experiment seeks to determine optimal parameters for the Random Forest Regressor to achieve the best R^2, RMSE scores. To validate previous experiments, the grid search will provide supporting evidence to whether a greater ensemble of trees and complexity results in a better model.
+
+- **`n_clusters = 3`**: 
+#### K-means Experiment 1 Results
 
 ![Avg silhoutte plot](img\clustering\3_clusters_silhoutte.png)
 *Figure 19: Average silhoutte per cluster*
