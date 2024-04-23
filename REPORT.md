@@ -353,14 +353,13 @@ Utilising the grid search to identify optimal parameters, the model achieved an 
 ## Unsupervised ML
 
 ### K-means Clustering
-
-[K-means clustering Sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html)
+[K-means clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) was employed to group geographical locations according to the median house value for a district. This method utilised all the features to uncover patterns within the data, aiming to determine if the resulting clusters accurately represent the diverse pricing across California.
 
 ### K-means Experiments
 
 **Parameters used:**
 
-- **`n_clusters`**: This parameter determines the number of clusters to perform clustering with.
+- **`n_clusters`**: This parameter defines the number of clusters for the clustering process.
 
 ---
 ### K-means Experiment 1
@@ -371,16 +370,19 @@ Utilising the grid search to identify optimal parameters, the model achieved an 
 *Figure 18: Inertia and silhoutte plot to find optimal clusters*
 <br><br>
 
-The aim of this experiment is to utilise the most optimal clusters that are identified through **Figure 18** experiment seeks to determine optimal parameters for the Random Forest Regressor to achieve the best R^2, RMSE scores. To validate previous experiments, the grid search will provide supporting evidence to whether a greater ensemble of trees and complexity results in a better model.
+By utilising **Figure 18** and evaluating the inertia and silhouette scores, the number of suitable clusters to represent housing prices for California's districts can be identified. To evaluate the model's performance, we will use the average silhouette scores for each cluster and plot the clusters against locations to compare them with the actual clusters.
 
-- **`n_clusters = 3`**: 
+- **`n_clusters = 3`**: Based on **Figure 18**, 3 clusters strikes a balance between inertia and silhouette scores
+
+
 #### K-means Experiment 1 Results
 
 ![Avg silhoutte plot](img\clustering\3_clusters_silhoutte.png)
-*Figure 19: Average silhoutte per cluster*
+*Figure 19: Silhoutte score per cluster*
 <br><br>
 
 ![Geographical clusters](img\clustering\3_cluster_map.png)
+
 *Figure 20: Geographical clusters based on Median house value*
 <br><br>
 
@@ -391,10 +393,18 @@ The aim of this experiment is to utilise the most optimal clusters that are iden
 
 
 #### K-means Experiment 1 Discussion
+- **Figure 19** displays the silhouette scores for each cluster, the greater the coefficient the better the cohesion to other instances within the cluster and greater separation from other clusters. All clusters possess a larger than average silhouette coefficient suggesting definitive clusters were created. Cluster 2 has the highest silhouette coefficient whilst clusters 1,0 possess wider characteristics suggesting more variance between instances in terms of housing prices.
+
+- **Figure 20** depicts a geographical plot of the clusters across California. In comparison to **Figure 21**, the algorithm has identified that more expensive housing is concentrated along the California coast which is consistent with the actual districts. Cluster 1 covers the majority of California, highlighting the high variance among instances and the challenge of separating clusters 1 and 0.
+
+- Therefore, increasing the number of clusters might discover clearer distinctions for the districts.
+
 
 
 #### K-means Experiment 2 Description
+Based on the previous experiment, it's evident that classifying less expensive houses in California poses a challenge, leading to higher variance among instances within clusters regarding housing prices. To combat this, increasing the number of clusters appears appropriate.
 
+- **`n_clusters = 4`**: As 3 clusters provided close distinct groupings, a slight increment seems suitable to further separate the more varied clusters.
 
 #### K-means Experiment 2 Results
 
@@ -403,6 +413,7 @@ The aim of this experiment is to utilise the most optimal clusters that are iden
 <br><br>
 
 ![Geographical clusters](img\clustering\4_cluster_map.png)
+
 *Figure 23: Geographical clusters based on Median house value*
 <br><br>
 
@@ -412,6 +423,14 @@ The aim of this experiment is to utilise the most optimal clusters that are iden
 <br><br>
 
 #### K-means Experiment 2 Discussion
+
+- **Figure 22** displays all clusters possessing a silhouette score greater than average suggesting distinctive clusters have been identified. The increase in clusters has led to a reduction in the variance within clusters with cluster 1 now being the most cohesive. Although the clusters possess strong silhouette scire, there is still some variance between instances in cluster 0 which reflects the difficulty of clustering the lower prices houses in California.
+
+
+- **Figure 23** shows similarities with the initial clusters in **Figure 24**. It performs well in identifying the more expensive housing along the California coast and exhibits improvement in recognizing lower housing prices, particularly along the southern coast. However, the model doesn't entirely capture the complexities of determining housing prices for the districts. Therefore, for further analysis, it might be beneficial to explore another model such as DBSCAN to cluster locations based on the median house value.
+
+- In general, K-means clustering has successfully created distinct clusters based on the input features, which is a positive outcome. However, for more detailed and refined clusters, another algorithm might be more suitable.
+
 
 
 
